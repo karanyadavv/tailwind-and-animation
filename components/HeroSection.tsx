@@ -24,6 +24,28 @@ const HeroSection = () => {
           Join Waitlist
         </button>
       </div>
+      <div className="mt-6 flex items-center justify-center gap-1.5">
+        <button className="inline-flex cursor-pointer rounded-xl px-4 py-2 transition-all duration-200 hover:bg-[#282828]">
+          <span className="bg-gradient-to-r from-neutral-50 to-neutral-600 bg-clip-text font-medium text-transparent">
+            New: Product Intelligence
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-neutral-600 hover:text-neutral-50"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 6l6 6l-6 6" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };
