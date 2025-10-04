@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Logo from "../public/vercel.svg";
 import { NavBarLinks } from "@/app/data/Navbar";
 import Link from "next/link";
+import { AnimatePresence, easeOut, motion } from "motion/react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,23 +44,32 @@ const NavBar = () => {
             <path d="M10 18h10" />
           </svg>
         </button>
-        {isOpen && (
-          <div className="absolute inset-x-0 top-20 mx-auto max-w-[90%] rounded-md bg-neutral-800">
-            <div className="flex flex-col items-start gap-4 p-4 text-sm font-medium text-neutral-300 md:hidden">
-              {NavBarLinks.map((link, index) => {
-                return (
-                  <Link
-                    className="hover:text-neutral-200"
-                    href={link.href}
-                    key={index}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              style={{ transformOrigin: "top right" }}
+              transition={{ duration: 0.2, ease: easeOut }}
+              className="absolute inset-x-0 top-22 mx-auto max-w-[90%] rounded-md bg-neutral-800"
+            >
+              <div className="flex flex-col items-start gap-4 p-4 text-sm font-medium text-neutral-300 md:hidden">
+                {NavBarLinks.map((link, index) => {
+                  return (
+                    <Link
+                      className="hover:text-neutral-200"
+                      href={link.href}
+                      key={index}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
