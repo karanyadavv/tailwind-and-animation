@@ -2,6 +2,7 @@
 import { div } from "motion/react-client";
 import React, { useState } from "react";
 import { AnimatePresence, easeInOut, easeOut, motion } from "motion/react";
+import Card from "./Card";
 
 const HeroSection = () => {
   const [buttonCLicked, setButtonClicked] = useState(false);
@@ -61,6 +62,9 @@ const HeroSection = () => {
           Copy page
         </button>
       </div>
+      <div>
+        <Card />
+      </div>
     </div>
   );
 };
@@ -70,12 +74,12 @@ export default HeroSection;
 const CircleCheckSVG = () => {
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0, filter: "blur(2px)" }}
+      initial={{ scale: 0.6, opacity: 0, filter: "blur(2px)" }}
       animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
-      exit={{ scale: 0.8, opacity: 0, filter: "blur(2px)" }}
+      exit={{ scale: 0.6, opacity: 0, filter: "blur(2px)" }}
       key={"circle"}
       transition={{
-        duration: 0.1,
+        duration: 0.2,
         ease: easeInOut,
       }}
     >
@@ -97,12 +101,12 @@ const CircleCheckSVG = () => {
 const CopySVG = () => {
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0, filter: "blur(2px)" }}
+      initial={{ scale: 0.6, opacity: 0, filter: "blur(2px)" }}
       animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
-      exit={{ scale: 0.8, opacity: 0, filter: "blur(2px)" }}
+      exit={{ scale: 0.6, opacity: 0, filter: "blur(2px)" }}
       key={"copy"}
       transition={{
-        duration: 0.1,
+        duration: 0.2,
         ease: easeInOut,
       }}
     >
@@ -114,8 +118,8 @@ const CopySVG = () => {
         fill="none"
         stroke="#ffffff"
         strokeWidth="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className="icon icon-tabler icons-tabler-outline icon-tabler-copy size-4"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />

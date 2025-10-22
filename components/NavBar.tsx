@@ -5,18 +5,30 @@ import Logo from "../public/vercel.svg";
 import { NavBarLinks } from "@/app/data/Navbar";
 import Link from "next/link";
 import { AnimatePresence, easeOut, motion } from "motion/react";
+import { MdOutlineDarkMode } from "react-icons/md";
+
+const handleThemeChange = () => {
+  const currentTheme = document.documentElement.classList.contains("dark")
+    ? "light"
+    : "dark";
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme", currentTheme);
+};
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="relative">
-      <div className="shadow-navbar relative mx-auto flex max-w-4xl items-center justify-between border-b-4 border-neutral-800 p-4 md:mt-4 md:rounded-2xl md:border-4">
-        <Image alt="logo" src={Logo} height={50} width={50} className="" />
-        <div className="mr-10 hidden items-center gap-4 text-sm font-medium text-neutral-500 md:flex">
+      <div className="shadow-navbar relative mx-auto flex max-w-4xl items-center justify-between border-b-4 border-neutral-600 p-4 md:mt-4 md:rounded-2xl md:border-4 dark:border-neutral-800">
+        <Link href={"/"}>
+          <Image alt="logo" src={Logo} height={50} width={50} className="" />
+        </Link>
+        <div className="mr-10 hidden items-center gap-4 text-sm font-medium text-neutral-600 md:flex dark:text-neutral-500">
           {NavBarLinks.map((link, index) => {
             return (
               <Link
-                className="hover:text-neutral-200"
+                className="hover:text-neutral-900 dark:hover:text-neutral-200"
                 href={link.href}
                 key={index}
               >
@@ -24,6 +36,10 @@ const NavBar = () => {
               </Link>
             );
           })}
+          <MdOutlineDarkMode
+            onClick={handleThemeChange}
+            className="size-4 cursor-pointer"
+          />
         </div>
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           <svg

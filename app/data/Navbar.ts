@@ -1,11 +1,11 @@
 export const NavBarLinks = [
   {
-    name: "Products",
-    href: "#",
+    name: "Cards",
+    href: "/cards",
   },
   {
-    name: "Solutions",
-    href: "#",
+    name: "Buttons",
+    href: "/buttons",
   },
   {
     name: "Developers",
