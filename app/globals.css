@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: oklch(87% 0 0);
+  --background: #fdfdfc;
 }
 
 .dark {
