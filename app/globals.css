@@ -1,9 +1,15 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Geist:wght@100..900&display=swap");
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #fdfdfc;
+  /* font-family: "Inter", sans-serif; */
+}
+
+body {
+  /* font-family: "Inter", sans-serif; */
 }
 
 .dark {
@@ -11,6 +17,7 @@
 }
 @theme {
   --color-primary: oklch(50.5% 0.213 27.518);
+  --font-arimo: "Arimo", sans-serif;
   --shadow-navbar:
     0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(25, 28, 33, 0.02),
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);

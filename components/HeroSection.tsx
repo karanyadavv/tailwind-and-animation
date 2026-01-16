@@ -3,6 +3,7 @@ import { div, span } from "motion/react-client";
 import React, { useState } from "react";
 import { AnimatePresence, easeInOut, easeOut, motion } from "motion/react";
 import Card from "./Card";
+import Checkbox from "./Checkbox";
 
 const HeroSection = () => {
   const [buttonCLicked, setButtonClicked] = useState(false);
@@ -88,6 +89,9 @@ const HeroSection = () => {
       </div>
       <div>
         <Card />
+      </div>
+      <div>
+        <Checkbox />
       </div>
     </div>
   );
