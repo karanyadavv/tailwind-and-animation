@@ -3,9 +3,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica.ttf");
+}
 :root {
   --background: #fdfdfc;
-  /* font-family: "Inter", sans-serif; */
+  font-family: "Helvetica";
 }
 
 body {
