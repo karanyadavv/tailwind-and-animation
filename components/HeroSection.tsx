@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { AnimatePresence, easeInOut, easeOut, motion } from "motion/react";
 import Card from "./Card";
 import Checkbox from "./Checkbox";
+import TryProvenButton from "./TryProvenButton";
 
 const HeroSection = () => {
   const [buttonCLicked, setButtonClicked] = useState(false);
@@ -92,6 +93,9 @@ const HeroSection = () => {
       </div>
       <div>
         <Checkbox />
+      </div>
+      <div>
+        <TryProvenButton />
       </div>
     </div>
   );
