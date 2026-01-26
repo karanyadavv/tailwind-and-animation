@@ -10,7 +10,7 @@
   src: url("/fonts/Helvetica.ttf");
 }
 :root {
-  --background: #fdfdfc;
+  --background: oklch(92.8% 0.006 264.531);
   font-family: "Helvetica";
   --font-stack: "Stack Sans Headline", system-ui, sans-serif;
   --font-google: "Google Sans Flex", sans-serif;
